@@ -1,0 +1,113 @@
+<html>
+<head>
+	
+</head>
+<style>
+body {
+	background: linear-gradient(90deg, rgba(151,222,103,1) 0%, rgba(88,207,94,1) 35%, rgba(82,179,80,1) 100%);
+}
+
+.buttonDownload {
+	display: inline-block;
+	position: relative;
+	padding: 10px 25px;
+	height: 70px;
+	background-color:  #fff;
+	color: #339933;
+	border: 5px solid #339933;
+	font-family: cursive;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+	text-indent: 15px;
+}
+
+.buttonDownload:hover {
+	background-color: #333;
+	color: white;
+}
+
+.buttonDownload:before, .buttonDownload:after {
+	content: ' ';
+	display: block;
+	position: absolute;
+	left: 15px;
+	top: 52%;
+}
+
+/* Download box shape  */
+.buttonDownload:before {
+	width: 20px;
+	height: 6px;
+	border-style: solid;
+	border-width: 0 2px 2px;
+}
+
+/* Download arrow shape */
+.buttonDownload:after {
+	width: 3px;
+	height: 2;
+	margin-left: 7px;
+	margin-top: -3px;
+  
+	border-style: solid;
+	border-width: 4px 4px 0 4px;
+	border-color: transparent;
+	border-top-color: inherit;
+	
+	animation: downloadArrow 2s linear infinite;
+	animation-play-state: paused;
+}
+
+.buttonDownload:hover:before {
+	border-color: #4CC713;
+}
+
+.buttonDownload:hover:after {
+	border-top-color: #4CC713;
+	animation-play-state: running;
+}
+
+/* keyframes for the download icon anim */
+@keyframes downloadArrow {
+	/* 0% and 0.001% keyframes used as a hackish way of having the button frozen on a nice looking frame by default */
+	0% {
+		margin-top: -1px;
+		opacity: 1;
+	}
+	
+	0.001% {
+		margin-top: -13px;
+		opacity: 0;
+	}
+	
+	50% {
+		opacity: 1;
+	}
+	
+	100% {
+		margin-top: 0;
+		opacity: 0;
+	}
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100% ;
+  
+}
+</style>
+<body>
+<div class="center">
+
+<form action="/download">
+	<button type="submit" class="buttonDownload" style="width: 300px; margin: 0 auto;">Download File</button>
+</form>
+</div>
+</body>
+
+
+</html>
